@@ -1,4 +1,4 @@
-package com.news.aware.theme
+package com.news.aware.ui.theme
 
 import android.app.Activity
 import android.os.Build
