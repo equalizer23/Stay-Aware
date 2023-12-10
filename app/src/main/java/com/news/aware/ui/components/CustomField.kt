@@ -51,7 +51,8 @@ fun CustomField(modifier: Modifier = Modifier) {
         keyboardOptions = KeyboardOptions(
             keyboardType = KeyboardType.Text
         ),
-        shape = CircleShape
+        shape = CircleShape,
+
 
     )
 }

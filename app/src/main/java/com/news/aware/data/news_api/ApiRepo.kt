@@ -5,5 +5,5 @@ import com.news.aware.domain.models.Article
 interface ApiRepo {
 
     //Returns a list of articles
-    suspend fun getArticles() : List<Article>
+    suspend fun getArticles(category: String, date: String) : List<Article>
 }

@@ -12,7 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.news.aware.ui.theme.StayAwareTheme
 import com.news.aware.ui.app.AppScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +23,7 @@ class MainActivity : ComponentActivity() {
 
     private fun setView(){
         setContent {
-            AppScreen(activity = this)
+            AppScreen()
         }
     }
 }

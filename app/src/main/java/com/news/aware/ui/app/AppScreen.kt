@@ -8,21 +8,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.news.aware.navigation.Navigator
 import com.news.aware.navigation.RootNavigation
 import com.news.aware.ui.theme.StayAwareTheme
 
 @Composable
-fun AppScreen(activity: ComponentActivity) {
+fun AppScreen() {
     StayAwareTheme {
         Surface(
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
             val navHostController = rememberNavController()
+            val navigator = Navigator(navHostController)
 
             RootNavigation(
-                navHostController = navHostController,
-                context = activity
+                navigator = navigator,
+                navHostController
             )
         }
     }

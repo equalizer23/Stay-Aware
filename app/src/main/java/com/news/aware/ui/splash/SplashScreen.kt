@@ -32,8 +32,7 @@ import com.news.aware.ui.components.FadeText
 import kotlinx.coroutines.delay
 
 @Composable
-fun SplashScreen(controller: NavHostController, modifier: Modifier = Modifier) {
-    val navigator = Navigator(controller)
+fun SplashScreen(navigator: Navigator, modifier: Modifier = Modifier) {
     var loadVisibility by remember { mutableStateOf(false) }
 
     LaunchedEffect(key1 = loadVisibility){

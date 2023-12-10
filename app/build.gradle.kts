@@ -2,8 +2,9 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-//    id ("com.google.dagger.hilt.android")
-//    id ("kotlin-kapt")
+    id("org.jetbrains.kotlin.plugin.serialization")
+    id ("com.google.dagger.hilt.android")
+    kotlin("kapt")
 }
 
 android {
@@ -12,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.news.aware"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -61,12 +62,19 @@ dependencies {
     implementation ("io.ktor:ktor-client-logging:$ktorVersion")
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
     implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
     //Compose
     implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
     implementation("androidx.navigation:navigation-compose:2.7.5")
     implementation ("androidx.compose.animation:animation:1.5.4")
-    implementation ("io.coil-kt:coil-compose:1.4.0")
+    implementation("io.coil-kt:coil-compose:2.5.0")
+
+    //Dagger and Hilt
+    implementation ("com.google.dagger:hilt-android:2.48.1")
+    kapt ("com.google.dagger:hilt-compiler:2.48.1")
+    kapt ("androidx.hilt:hilt-compiler:1.1.0")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.1.0")
 
 
     // Coroutines
@@ -87,4 +95,8 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+}
+
+kapt {
+    correctErrorTypes = true
 }

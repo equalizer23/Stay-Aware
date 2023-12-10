@@ -10,6 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.sp
 import com.news.aware.R
 
@@ -21,6 +22,8 @@ fun CoolText(modifier: Modifier = Modifier, text: String, align: TextAlign = Tex
         color = Color.Black,
         fontSize = size.sp,
         fontFamily = FontFamily(Font(R.font.notosans_regular)),
-        textAlign = align
+        textAlign = align,
+        maxLines = 2,
+        overflow = TextOverflow.Ellipsis
     )
 }
